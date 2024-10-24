@@ -1,0 +1,6 @@
+export const HEADER__TEXT = {
+  TITLE: "MR. BUTCHER",
+  ABOUT: "ABOUT",
+  SHOP: "SHOP",
+  CONTACTS: "CONTACT"
+}
