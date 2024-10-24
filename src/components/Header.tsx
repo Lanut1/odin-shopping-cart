@@ -21,9 +21,6 @@ const Header: React.FC = () => {
       <Search/>
       <ShoppingCart/>
     </div>
-
-
-
   </header>
  )
 }

@@ -1,4 +1,5 @@
 import './App.css'
+import AdvertisingSpan from './components/AdvertisingSpan'
 import Header from './components/Header'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
     <Header/>
+    <AdvertisingSpan/>
     </>
   )
 }

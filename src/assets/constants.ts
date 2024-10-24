@@ -4,3 +4,7 @@ export const HEADER__TEXT = {
   SHOP: "SHOP",
   CONTACTS: "CONTACT"
 }
+
+export const ADVERTISING__SPAN = {
+  DELIVERY: "FREE DELIVERY ON ORDERS $50+"
+}

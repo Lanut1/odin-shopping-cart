@@ -1,0 +1,25 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animateMarquee {
+  animation: marquee 20s linear infinite;
+  display: inline-block;
+  width: 100%;
+  animation-play-state: running;
+  cursor: pointer;
+}
+
+.animateMarquee:hover {
+  animation-play-state: paused;
+}
+
+.animationWrapper {
+  overflow: hidden;
+  white-space: nowrap
+}
