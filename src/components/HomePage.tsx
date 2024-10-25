@@ -1,4 +1,4 @@
-import { Button, Card, CardMedia, Container, Grid2, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Card, CardMedia, Container, Paper, Stack, Typography } from "@mui/material";
 import styles from "./HomePage.module.css";
 import { ABOUT__PAGE } from "../assets/constants";
 import Slider from "react-slick";
@@ -51,37 +51,36 @@ const HomePage: React.FC = () => {
           <Typography variant="h4" component="h1" color="black" textAlign="left" sx={{pb: 5}}>
             {ABOUT__PAGE.ABOUT}
           </Typography>
-          <Grid2 container sx={{justifyContent: "space-between", alignItems: "center"}}>
-            <Grid2>
-              <Paper elevation={10} sx={{backgroundColor: 'rgba(255, 255, 255, 0.8)', p: 5, maxWidth: 600, minWidth: 200}}>
-                <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
-                  {ABOUT__PAGE.HISTORY}
-                </Typography>
-                <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
-                  {ABOUT__PAGE.PRODUCTS}
-                </Typography>
-                <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
-                  {ABOUT__PAGE.BUTCHERS}
-                </Typography>
-                <Typography variant="h6" component="p" color="black" textAlign="left">
-                  {ABOUT__PAGE.VISIT}
-                </Typography>
-              </Paper>
-            </Grid2>
-            <Grid2>
+
+          <Box sx={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: 7}}>
+            <Paper elevation={10} sx={{backgroundColor: 'rgba(255, 255, 255, 0.8)', p: 5, maxWidth: 600, minWidth: 200, flex: 1}}>
+              <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
+                {ABOUT__PAGE.HISTORY}
+              </Typography>
+              <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
+                {ABOUT__PAGE.PRODUCTS}
+              </Typography>
+              <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
+                {ABOUT__PAGE.BUTCHERS}
+              </Typography>
+              <Typography variant="h6" component="p" color="black" textAlign="left">
+                {ABOUT__PAGE.VISIT}
+              </Typography>
+            </Paper>
+          <Box sx={{ maxWidth: 600, minWidth: 200, flex: 1}}>
             <Slider {...settings}>
               {images.map((image) => (
-                <Card key={image} sx={{ width: "100%", height: 400 }}>
+                <Card key={image}>
                   <CardMedia
                     component="img"
                     image={image}
-                    sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    sx={{ width: "100%", objectFit: "cover" }}
                   />
                 </Card>
               ))}
             </Slider>
-            </Grid2>
-          </Grid2>
+          </Box>
+        </Box>
         </Container>
 
     </main>
