@@ -19,3 +19,9 @@ export const ABOUT__PAGE = {
   BUTCHERS: "Our experienced butchers are passionate about their craft and are here to help you choose the perfect cut.",
   VISIT: "Come visit us or check out our online shop to explore our full range of products!"
 }
+
+export const SALE__SECTION = {
+  TITLE: "Shop Fresh, Delivered Fast!",
+  SUBTITLE: "Order your favorite cuts and specialty meats online—straight from our butcher’s counter to your door!",
+  SHOP: "Shop Now"
+}
