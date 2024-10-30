@@ -5,6 +5,10 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface CartState {
+  [itemId: string]: CartItem;
+}
+
 export interface ItemsState {
   items: MeatItem[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
