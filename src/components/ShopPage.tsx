@@ -17,7 +17,7 @@ const ShopPage: React.FC = () => {
   return (
     <main>
       {items?.map((item) => (
-        <ItemCard item={item}/>
+        <ItemCard key={item.id} item={item}/>
       ))}
     </main>
   )
