@@ -25,3 +25,13 @@ export const SALE__SECTION = {
   SUBTITLE: "Order your favorite cuts and specialty meats online—straight from our butcher’s counter to your door!",
   SHOP: "Shop Now"
 }
+
+export const SHOP__PAGE = {
+  WELCOME: "Welcome to Our Online Meat Shop!",
+  ENJOY: "Enjoy fresh, high-quality meats delivered right to your door. Select from a variety of cuts and items to suit every meal.",
+  START: "Start your shopping journey with us, where quality and service meet.",
+  CHECK_OUT: "Checkout",
+  ADD: "Add to cart",
+  UPDATE: "Update cart",
+  REMOVE: "Remove from cart"
+}

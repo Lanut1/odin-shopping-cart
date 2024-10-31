@@ -23,10 +23,8 @@ const cartSlice = createSlice({
       //   state.push(action.payload);
       // }
     },
-    removeFromCart: (state, action: PayloadAction<CartItem>) => {
-      const itemId = action.payload.item.id;
-
-      delete state[itemId];
+    removeFromCart: (state, action: PayloadAction<string>) => {
+      delete state[action.payload];
       // const index = state.findIndex(position => position.item.id === action.payload.item.id);
 
       // if (index !== -1) {

@@ -4,6 +4,9 @@ import { AppDispatch} from "../store";
 import { fetchItems } from "../store/itemsSlice";
 import ItemCard from "./ItemCard";
 import { getAllItems } from "../store/selectors";
+// import { Box, Container } from "@mui/material";
+import ShopIntroSection from "./ShopIntroSection";
+import { Grid2 } from "@mui/material";
 
 
 const ShopPage: React.FC = () => {
@@ -12,13 +15,16 @@ const ShopPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchItems())
-  }, [dispatch])
+  }, [dispatch]) 
 
   return (
     <main>
-      {items?.map((item) => (
-        <ItemCard key={item.id} item={item}/>
-      ))}
+      <ShopIntroSection />
+      <Grid2 container spacing={5} sx={{alignItems: "center", justifyContent: "center", py: "2rem", px: "1rem" }}>
+        {items?.map((item) => (
+          <ItemCard key={item.id} item={item}/>
+        ))}
+      </Grid2>
     </main>
   )
 }
