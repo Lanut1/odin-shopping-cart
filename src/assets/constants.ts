@@ -35,3 +35,8 @@ export const SHOP__PAGE = {
   UPDATE: "Update cart",
   REMOVE: "Remove from cart"
 }
+
+export const CART__PAGE = {
+  YOUR_ORDER: "Your Order",
+  ORDER: "Order"
+}

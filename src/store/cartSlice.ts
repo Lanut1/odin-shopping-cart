@@ -7,7 +7,7 @@ const cartSlice = createSlice({
   name: "cartItems",
   initialState,
   reducers: {
-    addToShoppingCart: (state, action: PayloadAction<CartItem>) => {
+    addOrUpdateShoppingCart: (state, action: PayloadAction<CartItem>) => {
       const itemId = action.payload.item.id;
 
       if (state[itemId]) {
@@ -41,5 +41,5 @@ const cartSlice = createSlice({
   }
 })
 
-export const { addToShoppingCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { addOrUpdateShoppingCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

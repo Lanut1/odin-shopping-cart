@@ -1,14 +1,14 @@
 import { Box, Button, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { FieldNumberSpinner } from "../mui-treasury/field-number-spinner";
-import { ItemCardProps } from "./types";
+import { ShopItemProps } from "./types";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import { getIsAdded, getItemQuantity} from "../store/selectors";
 import React, { useState } from "react";
-import { addToShoppingCart, removeFromCart } from "../store/cartSlice";
+import { addOrUpdateShoppingCart, removeFromCart } from "../store/cartSlice";
 import { SHOP__PAGE } from "../assets/constants";
 
-const ItemCard: React.FC<ItemCardProps> = ({item}) => {
+const ShopItem: React.FC<ShopItemProps> = ({item}) => {
   const dispatch = useDispatch<AppDispatch>();
   const quantity = useSelector((state: RootState) => getItemQuantity(state, item.id));
   const isAdded = useSelector((state: RootState) => getIsAdded(state, item.id));
@@ -22,7 +22,7 @@ const ItemCard: React.FC<ItemCardProps> = ({item}) => {
 
   const handleCartItem = () => {
     if (itemQuantity > 0 && itemQuantity !== quantity) {
-      dispatch(addToShoppingCart({item: item, quantity: itemQuantity}));
+      dispatch(addOrUpdateShoppingCart({item: item, quantity: itemQuantity}));
     } else if (isAdded && itemQuantity === 0) {
       dispatch(removeFromCart(item.id))
     }
@@ -47,4 +47,4 @@ const ItemCard: React.FC<ItemCardProps> = ({item}) => {
   )
 }
 
-export default ItemCard;
+export default ShopItem;
