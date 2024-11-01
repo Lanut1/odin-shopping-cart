@@ -40,3 +40,9 @@ export const CART__PAGE = {
   YOUR_ORDER: "Your Order",
   ORDER: "Order"
 }
+
+export const ERRORS = {
+  OOPS: "Oops!", 
+  DEFAULT: "Something went wrong. Please try again later.",
+  BACK: "Back to Homepage"
+}

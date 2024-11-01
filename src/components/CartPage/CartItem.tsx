@@ -1,9 +1,9 @@
 import { Card, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
-import { CartItemProps } from "./types";
-import { FieldNumberSpinner } from "../mui-treasury/field-number-spinner";
+import { CartItemProps } from "../types";
+import { FieldNumberSpinner } from "../../mui-treasury/field-number-spinner";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../store";
-import { addOrUpdateShoppingCart, removeFromCart } from "../store/cartSlice";
+import { AppDispatch } from "../../store";
+import { addOrUpdateShoppingCart, removeFromCart } from "../../store/cartSlice";
 import { useState } from "react";
 import { Delete } from "@mui/icons-material";
 

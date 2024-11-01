@@ -1,12 +1,12 @@
 import { Box, Button, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { FieldNumberSpinner } from "../mui-treasury/field-number-spinner";
-import { ShopItemProps } from "./types";
+import { FieldNumberSpinner } from "../../mui-treasury/field-number-spinner";
+import { ShopItemProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../store";
-import { getIsAdded, getItemQuantity} from "../store/selectors";
+import { AppDispatch, RootState } from "../../store";
+import { getIsAdded, getItemQuantity} from "../../store/selectors";
 import React, { useState } from "react";
-import { addOrUpdateShoppingCart, removeFromCart } from "../store/cartSlice";
-import { SHOP__PAGE } from "../assets/constants";
+import { addOrUpdateShoppingCart, removeFromCart } from "../../store/cartSlice";
+import { SHOP__PAGE } from "../../assets/constants";
 
 const ShopItem: React.FC<ShopItemProps> = ({item}) => {
   const dispatch = useDispatch<AppDispatch>();

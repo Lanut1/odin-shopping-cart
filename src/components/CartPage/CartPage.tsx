@@ -1,8 +1,8 @@
 import { Button, Typography } from "@mui/material";
 import React from "react";
-import { CART__PAGE } from "../assets/constants";
+import { CART__PAGE } from "../../assets/constants";
 import { useSelector } from "react-redux";
-import { getCartItems } from "../store/selectors";
+import { getCartItems } from "../../store/selectors";
 import CartItem from "./CartItem";
 import { ShoppingCartCheckout } from "@mui/icons-material";
 

@@ -1,19 +1,14 @@
-import './App.css'
-import CartPage from './components/CartPage'
-import Header from './components/Header'
-// import HomePage from './components/HomePage'
-import ShopPage from './components/ShopPage'
+import { RouterProvider } from 'react-router-dom';
+import './App.css';
+import router from './routes';
 
 function App() {
 
   return (
     <>
-    <Header/>
-    {/* <HomePage/> */}
-    <ShopPage/> 
-    <CartPage/>
+      <RouterProvider router={router}/>
     </>
   )
 }
 
-export default App
+export default App;

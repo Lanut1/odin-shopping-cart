@@ -1,9 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import { SHOP__PAGE } from "../assets/constants";
+import { SHOP__PAGE } from "../../assets/constants";
 import { ShoppingCart } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const ShopIntroSection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/cart");
+  }
+  
   return (
     <>
     <Box textAlign="center" sx={{ pt: 5, pb: 1, display: "flex", gap: "4rem", justifyContent: "center", alignItems: "center"}}>
@@ -14,6 +21,7 @@ const ShopIntroSection: React.FC = () => {
         variant="contained"
         sx={{backgroundColor: "red", color: "white"}}
         startIcon={<ShoppingCart />}
+        onClick={handleButtonClick}
       >
         {SHOP__PAGE.CHECK_OUT}
       </Button>

@@ -1,8 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import { SALE__SECTION } from "../assets/constants";
+import { SALE__SECTION } from "../../assets/constants";
+import { useNavigate } from "react-router-dom";
 
 const SaleSection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/shop");
+  }
+
   return (
     <Box sx={{
       backgroundColor: 'blanchedalmond',
@@ -19,7 +26,7 @@ const SaleSection: React.FC = () => {
       <Typography variant="body1" sx={{ color: 'darkslategray' }}>
         {SALE__SECTION.SUBTITLE}
       </Typography>
-      <Button variant="contained" sx={{ backgroundColor: "red", color: "white", px: 4 }}>
+      <Button variant="contained" sx={{ backgroundColor: "red", color: "white", px: 4 }} onClick={handleButtonClick}>
         {SALE__SECTION.SHOP}
       </Button>
     </Box>

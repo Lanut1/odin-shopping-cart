@@ -1,6 +1,6 @@
 import { Box, Card, CardMedia, Container, Paper, Typography } from "@mui/material";
 import React from "react";
-import { ABOUT__PAGE } from "../assets/constants";
+import { ABOUT__PAGE } from "../../assets/constants";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
