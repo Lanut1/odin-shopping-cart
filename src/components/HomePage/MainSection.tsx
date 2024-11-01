@@ -32,10 +32,6 @@ const MainSection: React.FC = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{
-            backgroundColor: 'red',
-            color: 'white'
-          }}
           onClick={handleButtonClick}
         >
           {ABOUT__PAGE.SHOP_NOW}

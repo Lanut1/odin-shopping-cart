@@ -33,7 +33,8 @@ export const SHOP__PAGE = {
   CHECK_OUT: "Checkout",
   ADD: "Add to cart",
   UPDATE: "Update cart",
-  REMOVE: "Remove from cart"
+  REMOVE: "Remove from cart",
+  LOADING: "Loading..."
 }
 
 export const CART__PAGE = {

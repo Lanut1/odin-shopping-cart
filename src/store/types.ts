@@ -6,7 +6,8 @@ export interface CartItem {
 }
 
 export interface CartState {
-  [itemId: string]: CartItem;
+  items: {[itemId: string]: CartItem};
+  counter: number;
 }
 
 export interface ItemsState {

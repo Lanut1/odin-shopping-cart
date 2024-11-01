@@ -26,7 +26,7 @@ const SaleSection: React.FC = () => {
       <Typography variant="body1" sx={{ color: 'darkslategray' }}>
         {SALE__SECTION.SUBTITLE}
       </Typography>
-      <Button variant="contained" sx={{ backgroundColor: "red", color: "white", px: 4 }} onClick={handleButtonClick}>
+      <Button variant="contained" sx={{ px: 4 }} onClick={handleButtonClick}>
         {SALE__SECTION.SHOP}
       </Button>
     </Box>

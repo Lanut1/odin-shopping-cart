@@ -4,9 +4,10 @@ import { AppDispatch} from "../../store";
 import { fetchItems } from "../../store/itemsSlice";
 import { getAllItems, getStatus } from "../../store/selectors";
 import ShopIntroSection from "./ShopIntroSection";
-import { CircularProgress, Grid2 } from "@mui/material";
+import { Grid2 } from "@mui/material";
 import ShopItem from "./ShopItem";
 import ErrorPage from "../ErrorPage";
+import LoadingPage from "../LoadingPage";
 
 
 const ShopPage: React.FC = () => {
@@ -18,7 +19,8 @@ const ShopPage: React.FC = () => {
     dispatch(fetchItems())
   }, [dispatch]) 
 
-  if (status === "loading") return <CircularProgress/>;
+
+  if (status === "loading") return <LoadingPage/>;
 
   if (status === "failed") return <ErrorPage/>
 

@@ -10,7 +10,7 @@ const ShopIntroSection: React.FC = () => {
   const handleButtonClick = () => {
     navigate("/cart");
   }
-  
+
   return (
     <>
     <Box textAlign="center" sx={{ pt: 5, pb: 1, display: "flex", gap: "4rem", justifyContent: "center", alignItems: "center"}}>
@@ -19,7 +19,6 @@ const ShopIntroSection: React.FC = () => {
       </Typography>
       <Button
         variant="contained"
-        sx={{backgroundColor: "red", color: "white"}}
         startIcon={<ShoppingCart />}
         onClick={handleButtonClick}
       >

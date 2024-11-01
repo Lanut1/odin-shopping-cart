@@ -20,7 +20,6 @@ const CartPage: React.FC = () => {
       <Typography variant="h4">{`Total: ${grandTotal}$`}</Typography>
       <Button
         variant="contained"
-        sx={{backgroundColor: "red", color: "white"}}
         startIcon={<ShoppingCartCheckout />}
       >
         {CART__PAGE.ORDER}
