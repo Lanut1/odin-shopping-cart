@@ -1,29 +1,37 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Container, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { CART__PAGE } from "../../assets/constants";
 import { useSelector } from "react-redux";
 import { getCartItems } from "../../store/selectors";
 import CartItem from "./CartItem";
 import { ShoppingCartCheckout } from "@mui/icons-material";
+import EmptyCart from "./EmptyCart";
 
 const CartPage: React.FC = () => {
+  const theme = useTheme();
   const cartItems = useSelector(getCartItems);
   const cartItemsArray = Object.values(cartItems);
-  const grandTotal = cartItemsArray.reduce((total, currentItem) => total + currentItem.item.price * currentItem.quantity, 0)
+
+  if (cartItemsArray.length === 0) return (<EmptyCart/>);
+
+  const grandTotal = cartItemsArray.reduce((total, currentItem) => total + currentItem.item.price * currentItem.quantity, 0);
 
   return (
      <main>
-      <Typography variant="h4">{CART__PAGE.YOUR_ORDER}</Typography>
-      {cartItemsArray?.map(cartItem => (
-        <CartItem item={cartItem}/>
-      ))}
-      <Typography variant="h4">{`Total: ${grandTotal}$`}</Typography>
-      <Button
-        variant="contained"
-        startIcon={<ShoppingCartCheckout />}
-      >
-        {CART__PAGE.ORDER}
-      </Button>
+      <Container maxWidth={false} disableGutters sx={{display: 'flex', flexDirection: 'column', gap: '1rem', p: 5, m: 0,  backgroundColor: theme.palette.customColors.background}}>
+        <Typography variant="h4">{CART__PAGE.YOUR_ORDER}</Typography>
+        {cartItemsArray?.map(cartItem => (
+          <CartItem key={cartItem.item.id} item={cartItem}/>
+        ))}
+        <Typography variant="h4" sx={{alignSelf: 'flex-end'}}>{`Total: ${grandTotal}$`}</Typography>
+        <Button
+          variant="contained"
+          startIcon={<ShoppingCartCheckout />}
+          sx={{alignSelf: 'flex-end'}}
+        >
+          {CART__PAGE.ORDER}
+        </Button>
+      </Container>
      </main>
   )
 }

@@ -29,16 +29,16 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
   const totalPrice = item.quantity * item.item.price;
 
   return (
-    <Card sx={{display: "flex", justifyContent: "space-between", height: 100}}>
+    <Card sx={{display: "flex", justifyContent: "space-between", height: '15vh'}} elevation={5}>
       <CardMedia 
         image={item.item.image}
-        sx={{width: 150, objectFit: "cover"}}
+        sx={{width: '15vw', objectFit: "cover"}}
         />
-      <CardContent sx={{display: "flex", gap: "0.5rem"}}>
+      <CardContent sx={{display: "flex", gap: "1rem", alignItems: "center"}}>
         <Typography variant="h5">{item.item.name}</Typography>
-        <Typography>{`${item.item.price}$`}</Typography>
+        <Typography variant="h5">{`${item.item.price}$`}</Typography>
         <FieldNumberSpinner value={quantity} onChange={handleItemChange}/>
-        <Typography variant="h5">{totalPrice}</Typography>
+        <Typography variant="h5">{`${totalPrice}$`}</Typography>
         <IconButton onClick={handleItemDelete}><Delete/></IconButton>
       </CardContent>
     </Card>

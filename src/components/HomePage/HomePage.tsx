@@ -7,8 +7,8 @@ import SaleSection from "./SaleSection";
 const HomePage: React.FC = () => {
   return (
     <main>
-      <AdvertisingSpan/>
       <MainSection/>
+      <AdvertisingSpan/>
       <AboutSection/>
       <SaleSection/>
     </main>

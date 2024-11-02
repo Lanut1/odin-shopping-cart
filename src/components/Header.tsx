@@ -2,17 +2,17 @@ import React from "react";
 import MustacheIcon from "../assets/icons/mustache.svg";
 import { HEADER__TEXT } from "../assets/constants";
 import { Search, ShoppingCart } from "@mui/icons-material";
-import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getCartQuantity } from "../store/selectors";
 
 const Header: React.FC = () => {
   const cartCounter = useSelector(getCartQuantity);
+  const theme = useTheme();
 
   return (
-    <header>
-      <AppBar position="static" sx={{ backgroundColor: 'blanchedalmond', padding: '1rem', color: 'black' }}>
+      <AppBar position='sticky' sx={{ backgroundColor: theme.palette.customColors.almond, padding: '1rem', color: 'black' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Link to={"/"}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -49,7 +49,6 @@ const Header: React.FC = () => {
           </Box>
         </Toolbar>
       </AppBar>
-    </header>
   )
 }
 

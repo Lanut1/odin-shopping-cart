@@ -1,4 +1,4 @@
-import { Box, Card, CardMedia, Container, Paper, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Container, Paper, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { ABOUT__PAGE } from "../../assets/constants";
 import Slider from "react-slick";
@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const AboutSection: React.FC = () => {
+  const theme = useTheme();
+
   const settings = {
     dots: true,
     infinite: true,
@@ -21,7 +23,7 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <Container sx={{p: 10}} disableGutters maxWidth={false}>
+    <Container sx={{p: 10, backgroundColor: theme.palette.customColors.background}} disableGutters maxWidth={false}>
     <Typography variant="h4" component="h1" color="black" textAlign="left" sx={{pb: 5}}>
       {ABOUT__PAGE.ABOUT}
     </Typography>
@@ -33,6 +35,9 @@ const AboutSection: React.FC = () => {
         </Typography>
         <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
           {ABOUT__PAGE.PRODUCTS}
+        </Typography>
+        <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
+          {ABOUT__PAGE.LOOKING}
         </Typography>
         <Typography variant="h6" component="p" color="black" textAlign="left" sx={{ pb: 2 }}>
           {ABOUT__PAGE.BUTCHERS}
