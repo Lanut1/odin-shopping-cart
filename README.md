@@ -19,7 +19,7 @@ This project is part of [The Odin Project](https://www.theodinproject.com/) curr
 - **Mock API for Image Display**: Since a suitable API was unavailable, images were sourced from **Pixabay** and **Unsplash**. A custom mock API and fetch function were created to display the necessary images dynamically.
 
 ## Live Demo
-Check out the live version of **MR Butcher Shopping Cart** [here](https://mrbutcher.netlify.app/).
+Check out the live version of **MR. BUTCHER Shopping Cart** [here](https://mrbutcher.netlify.app/).
 
 ## Installation
 To get started with the project, clone the repository and install the dependencies:
