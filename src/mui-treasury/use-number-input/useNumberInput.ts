@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSpinner } from "./useSpinner";
 
+declare const process: {
+  env: {
+    NODE_ENV: string;
+  };
+};
+
 type EventKeys =
   | "ArrowDown"
   | "ArrowUp"
