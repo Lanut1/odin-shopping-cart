@@ -6,7 +6,17 @@ const LoadingPage: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Container sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '3rem', height: '100vh', backgroundColor: theme.palette.customColors.background}}>
+    <Container
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '3rem',
+        height: '100vh',
+        backgroundColor: theme.palette.customColors.background
+      }}
+    >
       <CircularProgress/>
       <Typography variant="h4">
         {SHOP__PAGE.LOADING}

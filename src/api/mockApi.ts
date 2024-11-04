@@ -1,5 +1,5 @@
-import { meatItems } from "./mockItems"
-import { MeatItem } from "./types"
+import { meatItems } from "./mockItems";
+import { MeatItem } from "./types";
 
 export const fetchMeatItems = (): Promise<MeatItem[]> => {
   return new Promise((resolve) => {

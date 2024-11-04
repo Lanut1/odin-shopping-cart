@@ -29,17 +29,45 @@ const CartItem: React.FC<CartItemProps> = React.memo(({item}) => {
   const totalPrice = useMemo(() => item.quantity * item.item.price, [item.quantity, item.item.price]);
 
   return (
-    <Card sx={{display: "flex", justifyContent: "space-between", height: '15vh'}} elevation={5}>
+    <Card
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        height: "15vh"
+      }}
+      elevation={5}
+    >
       <CardMedia 
         image={item.item.image}
-        sx={{width: '15vw', objectFit: "cover"}}
-        />
-      <CardContent sx={{display: "flex", gap: "1rem", alignItems: "center"}}>
-        <Typography variant="h5">{item.item.name}</Typography>
-        <Typography variant="h5">{`${item.item.price}$`}</Typography>
+        sx={{
+          width: "15vw",
+          objectFit: "cover",
+          display: {xs: "none", sm: "block"}
+        }}
+      />
+      <CardContent
+        sx={{
+          display: "flex",
+          gap: {xs: "0.3rem", md: "1rem"},
+          alignItems: "center",
+          width: {xs: "100%", sm: "auto"}
+        }}
+      >
+        <Typography variant="h5">
+          {item.item.name}
+        </Typography>
+        <Typography variant="h5" sx={{display: {xs: "none", sm: "block"}}}>
+          {`${item.item.price}$`}
+        </Typography>
+
         <FieldNumberSpinner value={quantity} onChange={handleItemChange}/>
-        <Typography variant="h5">{`${totalPrice}$`}</Typography>
-        <IconButton onClick={handleItemDelete}><Delete/></IconButton>
+        <Typography variant="h5">
+          {`${totalPrice}$`}
+        </Typography>
+
+        <IconButton sx={{display: {xs: "none", sm: "block"}}} onClick={handleItemDelete}>
+          <Delete/>
+        </IconButton>
       </CardContent>
     </Card>
   )

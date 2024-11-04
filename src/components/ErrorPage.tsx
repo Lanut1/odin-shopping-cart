@@ -7,7 +7,17 @@ const ErrorPage: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', backgroundColor: theme.palette.customColors.background, height: '100vh'}}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1.5rem',
+        backgroundColor: theme.palette.customColors.background,
+        height: '100vh'
+      }}
+    >
       <Typography variant="h3">
         {ERRORS.OOPS}
       </Typography>

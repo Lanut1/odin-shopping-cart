@@ -32,15 +32,27 @@ const ShopPage: React.FC = () => {
 
   return (
     <main>
-      <Container disableGutters maxWidth={false} sx={{backgroundColor: theme.palette.customColors.background}}>
+      <Container
+        disableGutters
+        maxWidth={false}
+        sx={{backgroundColor: theme.palette.customColors.background}}
+      >
         <ShopIntroSection />
-        <Grid2 container spacing={5} sx={{alignItems: "center", justifyContent: "center", py: "2rem", px: "1rem" }}>
+        <Grid2
+          container
+          spacing={5}
+          sx={{
+            alignItems: "center",
+            justifyContent: "center",
+            py: "2rem",
+            px: "1rem"
+          }}
+        >
           {items?.map((item) => (
             <ShopItem key={item.id} item={item}/>
           ))}
         </Grid2>
       </Container>
-
     </main>
   )
 }

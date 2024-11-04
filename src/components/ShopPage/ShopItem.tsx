@@ -30,20 +30,40 @@ const ShopItem: React.FC<ShopItemProps> = React.memo(({item}) => {
 
 
   return (
-    <Card  elevation={5} sx={{ width: 300, borderRadius: 5 }}>
+    <Card elevation={5} sx={{ width: 300, borderRadius: 5 }}>
       <CardMedia
         image={item.image}
         sx={{ height: 300, objectFit: "cover" }}
         component="img"
         loading="lazy"
       />
-      <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", px: 5, gap: "0.5rem"}}>
-        <Box sx={{display: "flex", justifyContent: "space-between", width: "100%"}}>
-          <Typography variant="h6">{item.name}</Typography>
-          <Typography variant="h6">{`${item.price}$`}</Typography>
+      <CardContent 
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          px: 5,
+          gap: "0.5rem"
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%"
+          }}
+        >
+          <Typography variant="h6">
+            {item.name}
+          </Typography>
+          <Typography variant="h6">
+            {`${item.price}$`}
+          </Typography>
         </Box>
         <FieldNumberSpinner value={itemQuantity} onChange={handleInputChange}/>
-        <Button onClick={handleCartItem}>{!isAdded ? `${SHOP__PAGE.ADD}` : itemQuantity === 0 ? `${SHOP__PAGE.REMOVE}` : `${SHOP__PAGE.UPDATE}`}</Button>
+        <Button onClick={handleCartItem}>
+          {!isAdded ? `${SHOP__PAGE.ADD}` : itemQuantity === 0 ? `${SHOP__PAGE.REMOVE}` : `${SHOP__PAGE.UPDATE}`}
+        </Button>
       </CardContent>
     </Card>
   )

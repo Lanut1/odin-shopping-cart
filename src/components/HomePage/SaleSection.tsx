@@ -27,7 +27,6 @@ const SaleSection: React.FC = () => {
           {SALE__SECTION.SHOP}
         </Button>
       </Link>
-
     </Box>
   )
 }
