@@ -2,9 +2,15 @@ import { Button, Container, Paper, Stack, Typography, useTheme } from "@mui/mate
 import { Link } from "react-router-dom";
 import { ABOUT__PAGE } from "../../assets/constants";
 import butcher from "../../assets/photos/butcherShop.jpg";
+import { useEffect } from "react";
+import { preloadBackgroundImage } from "../../utils/preloadImage";
 
 const MainSection: React.FC = () => {
   const theme = useTheme();
+
+  useEffect(() => {
+    preloadBackgroundImage(butcher);
+  }, [])
 
   return (
     <Container maxWidth={false} disableGutters sx={{

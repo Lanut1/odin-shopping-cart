@@ -8,6 +8,7 @@ import { Container, Grid2, useTheme } from "@mui/material";
 import ShopItem from "./ShopItem";
 import ErrorPage from "../ErrorPage";
 import LoadingPage from "../LoadingPage";
+import { preloadBackgroundImage } from "../../utils/preloadImage";
 
 
 const ShopPage: React.FC = () => {
@@ -17,8 +18,13 @@ const ShopPage: React.FC = () => {
   const status = useSelector(getStatus);
 
   useEffect(() => {
-    dispatch(fetchItems())
-  }, [dispatch]) 
+    if (items.length === 0) {
+     dispatch(fetchItems()) 
+    } else {
+      const images = items.map(item => item.image);
+      preloadBackgroundImage(images);
+    }
+  }, [dispatch, items.length, items]) 
 
   if (status === "loading") return <LoadingPage/>;
 

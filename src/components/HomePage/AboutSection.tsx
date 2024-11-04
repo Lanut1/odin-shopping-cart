@@ -11,9 +11,10 @@ const AboutSection: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   const images = [
@@ -47,13 +48,14 @@ const AboutSection: React.FC = () => {
         </Typography>
       </Paper>
     <Box sx={{ maxWidth: 600, minWidth: 200, flex: 1}}>
-      <Slider {...settings}>
+      <Slider {...settings} >
         {images.map((image) => (
           <Card key={image}>
             <CardMedia
               component="img"
               image={image}
               sx={{ width: "100%", objectFit: "cover" }}
+              loading="lazy"
             />
           </Card>
         ))}

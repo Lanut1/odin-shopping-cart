@@ -4,18 +4,18 @@ import { FieldNumberSpinner } from "../../mui-treasury/field-number-spinner";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store";
 import { addOrUpdateShoppingCart, removeFromCart } from "../../store/cartSlice";
-import { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { Delete } from "@mui/icons-material";
 
-const CartItem: React.FC<CartItemProps> = ({item}) => {
+const CartItem: React.FC<CartItemProps> = React.memo(({item}) => {
   const dispatch = useDispatch<AppDispatch>();
   const [quantity, setQuantity] = useState(item.quantity);
 
-  const handleItemDelete = () => {
+  const handleItemDelete = useCallback(() => {
     dispatch(removeFromCart(item.item.id));
-  } 
+  }, [dispatch, item.item.id])
 
-  const handleItemChange = (value: number | undefined) => {
+  const handleItemChange = useCallback((value: number | undefined) => {
     if (typeof value === "undefined") return;
 
     if (value === 0) {
@@ -24,9 +24,9 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
       setQuantity(value);
       dispatch(addOrUpdateShoppingCart({...item, quantity: value}));
     }
-  }
+  }, [dispatch, item, handleItemDelete])
 
-  const totalPrice = item.quantity * item.item.price;
+  const totalPrice = useMemo(() => item.quantity * item.item.price, [item.quantity, item.item.price]);
 
   return (
     <Card sx={{display: "flex", justifyContent: "space-between", height: '15vh'}} elevation={5}>
@@ -43,6 +43,6 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
       </CardContent>
     </Card>
   )
-}
+})
 
 export default CartItem;

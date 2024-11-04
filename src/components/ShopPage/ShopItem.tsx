@@ -4,29 +4,29 @@ import { ShopItemProps } from "../types";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { getIsAdded, getItemQuantity} from "../../store/selectors";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { addOrUpdateShoppingCart, removeFromCart } from "../../store/cartSlice";
 import { SHOP__PAGE } from "../../assets/constants";
 
-const ShopItem: React.FC<ShopItemProps> = ({item}) => {
+const ShopItem: React.FC<ShopItemProps> = React.memo(({item}) => {
   const dispatch = useDispatch<AppDispatch>();
   const quantity = useSelector((state: RootState) => getItemQuantity(state, item.id));
   const isAdded = useSelector((state: RootState) => getIsAdded(state, item.id));
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
-  const handleInputChange = (value: number | undefined) => {
+  const handleInputChange = useCallback((value: number | undefined) => {
     if (typeof value === "undefined") return;
 
     setItemQuantity(value)
-  }
+  }, []);
 
-  const handleCartItem = () => {
+  const handleCartItem = useCallback(() => {
     if (itemQuantity > 0 && itemQuantity !== quantity) {
       dispatch(addOrUpdateShoppingCart({item: item, quantity: itemQuantity}));
     } else if (isAdded && itemQuantity === 0) {
       dispatch(removeFromCart(item.id))
     }
-  } 
+  }, [dispatch, isAdded, item, itemQuantity, quantity])
 
 
   return (
@@ -34,6 +34,8 @@ const ShopItem: React.FC<ShopItemProps> = ({item}) => {
       <CardMedia
         image={item.image}
         sx={{ height: 300, objectFit: "cover" }}
+        component="img"
+        loading="lazy"
       />
       <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", px: 5, gap: "0.5rem"}}>
         <Box sx={{display: "flex", justifyContent: "space-between", width: "100%"}}>
@@ -45,6 +47,6 @@ const ShopItem: React.FC<ShopItemProps> = ({item}) => {
       </CardContent>
     </Card>
   )
-}
+})
 
 export default ShopItem;
