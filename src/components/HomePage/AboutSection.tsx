@@ -4,6 +4,9 @@ import { ABOUT__PAGE } from "../../assets/constants";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import beefImage from "../../assets/photos/beef.jpg";
+import chickenImage from "../../assets/photos/chicken.jpg";
+import mincedMeatImage from "../../assets/photos/mincedMeat.jpg";
 
 const AboutSection: React.FC = () => {
   const theme = useTheme();
@@ -17,11 +20,7 @@ const AboutSection: React.FC = () => {
     autoplaySpeed: 3000,
   };
 
-  const images = [
-    "/src/assets/photos/beef.jpg",
-    "/src/assets/photos/chicken.jpg",
-    "/src/assets/photos/mincedMeat.jpg"
-  ];
+  const images = [beefImage, chickenImage, mincedMeatImage];
 
   return (
     <Container

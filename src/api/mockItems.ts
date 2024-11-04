@@ -13,8 +13,6 @@ import porkBellyImage from "../assets/photos/porkBelly.jpg";
 import porkSchnitzelImage from "../assets/photos/pork.jpg";
 import sausageImage from "../assets/photos/sausage.jpg";
 
-
-
 export const meatItems: MeatItem[] = [
   {
     id: uuidv4(),
